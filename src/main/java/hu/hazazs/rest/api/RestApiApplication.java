@@ -3,10 +3,12 @@ package hu.hazazs.rest.api;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @SpringBootApplication
@@ -63,6 +65,13 @@ class RestApiDemoController {
 	@GetMapping("/coffees")
 	Iterable<Coffee> getCoffees() {
 		return coffees;
+	}
+
+	@GetMapping("/coffees/{id}")
+	Optional<Coffee> getCoffeeById(@PathVariable("id") String id) {
+		return coffees.stream()
+				.filter(coffee -> coffee.getId().equals(id))
+				.findFirst();
 	}
 
 }
