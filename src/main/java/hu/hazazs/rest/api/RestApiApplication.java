@@ -2,7 +2,10 @@ package hu.hazazs.rest.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @SpringBootApplication
@@ -38,6 +41,22 @@ class Coffee {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+}
+
+@RestController
+class RestApiDemoController {
+
+	private final List<Coffee> coffees = new ArrayList<>();
+
+	public RestApiDemoController() {
+		coffees.addAll(List.of(
+				new Coffee("Café Cereza"),
+				new Coffee("Café Ganador"),
+				new Coffee("Café Lareño"),
+				new Coffee("Café Três Pontas")
+		));
 	}
 
 }
