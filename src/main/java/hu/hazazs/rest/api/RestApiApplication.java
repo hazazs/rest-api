@@ -2,6 +2,7 @@ package hu.hazazs.rest.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -57,6 +58,11 @@ class RestApiDemoController {
 				new Coffee("Café Lareño"),
 				new Coffee("Café Três Pontas")
 		));
+	}
+
+	@GetMapping("/coffees")
+	Iterable<Coffee> getCoffees() {
+		return coffees;
 	}
 
 }
