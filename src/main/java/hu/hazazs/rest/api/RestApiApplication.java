@@ -79,4 +79,18 @@ class RestApiDemoController {
 		return coffee;
 	}
 
+	@PutMapping("/coffees/{id}")
+	Coffee putCoffee(@PathVariable("id") String id, @RequestBody Coffee coffee) {
+		int coffeeIndex = -1;
+
+		for (int i = 0; i < coffees.size(); i++) {
+			if (coffees.get(i).getId().equals(id)) {
+				coffeeIndex = i;
+				coffees.set(coffeeIndex, coffee);
+			}
+		}
+
+		return coffeeIndex == -1 ? postCoffee(coffee) : coffee;
+	}
+
 }
