@@ -3,17 +3,17 @@ package hu.hazazs.rest.api.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Entity
+@NoArgsConstructor
 public class Coffee {
 
     @Id
     private String id;
     private String name;
-
-    public Coffee() {}
 
     public Coffee(@JsonProperty("id") String id, @JsonProperty("name") String name) {
         this.id = id;
