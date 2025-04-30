@@ -2,12 +2,16 @@ package hu.hazazs.rest.api.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
 @Entity
 @NoArgsConstructor
+@Getter
+@Setter
 public class Coffee {
 
     @Id
@@ -21,22 +25,6 @@ public class Coffee {
 
     public Coffee(String name) {
         this(UUID.randomUUID().toString(), name);
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
 }
