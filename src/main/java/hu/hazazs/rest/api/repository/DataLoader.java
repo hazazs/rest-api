@@ -19,6 +19,8 @@ public class DataLoader {
 
     @PostConstruct
     private void loadData() {
+        coffeeRepository.deleteAll();
+
         coffeeRepository.saveAll(List.of(
                 new Coffee("Café Cereza"),
                 new Coffee("Café Ganador"),

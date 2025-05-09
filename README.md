@@ -61,3 +61,12 @@ We also need to add the following lines to ```.gitignore```
 - mvnw
 - mvnw.cmd
 - /.mvn
+
+# Setting up the local PostgreSQL database
+
+We are using Docker to provide an out-of-the-box PostgreSQL database for the application. The container itself can be composed by the
+following command executed in the root folder (for the password we need to set an environment variable first with the name
+```POSTGRES_PASSWORD```):
+```bash
+docker-compose up --build -d rest-api-postgres
+```
