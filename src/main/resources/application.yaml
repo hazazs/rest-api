@@ -10,5 +10,6 @@ spring:
     url: jdbc:postgresql://localhost:7285/postgres
     username: postgres
     password: ${POSTGRES_PASSWORD}
-greeting-name: Dakota
-greeting-coffee: ${greeting-name} is drinking Café Cereza
+greeting:
+  name: Dakota
+  coffee: ${greeting.name} is drinking Café Cereza
