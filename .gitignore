@@ -31,6 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Apache Maven ###
 mvnw
 mvnw.cmd
 /.mvn
