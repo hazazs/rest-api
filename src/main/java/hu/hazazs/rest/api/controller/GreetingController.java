@@ -15,7 +15,7 @@ public class GreetingController {
     private final Greeting greeting;
 
     @Autowired
-    public GreetingController(Greeting greeting) {
+    GreetingController(Greeting greeting) {
         this.greeting = greeting;
     }
 

@@ -13,7 +13,7 @@ public class DataLoader {
     private final CoffeeRepository coffeeRepository;
 
     @Autowired
-    public DataLoader(CoffeeRepository coffeeRepository) {
+    DataLoader(CoffeeRepository coffeeRepository) {
         this.coffeeRepository = coffeeRepository;
     }
 
