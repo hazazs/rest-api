@@ -10,6 +10,11 @@ spring:
     url: jdbc:postgresql://localhost:7285/postgres
     username: postgres
     password: ${POSTGRES_PASSWORD}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: beans, configprops, env, health, loggers, mappings, metrics
 greeting:
   name: Dakota
   coffee: ${greeting.name} is drinking Café Cereza
