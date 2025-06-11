@@ -1,6 +1,9 @@
 spring:
   application:
     name: RestApi
+  output:
+    ansi:
+      enabled: ALWAYS
   jpa:
     open-in-view: false
     hibernate:
