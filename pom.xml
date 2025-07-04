@@ -68,7 +68,13 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
-					<argLine>-Xshare:off</argLine>
+					<argLine>
+						<!--
+						This configuration suppresses the following warning message during the build:
+							"Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended"
+						-->
+						-Xshare:off
+					</argLine>
 				</configuration>
 			</plugin>
 		</plugins>
