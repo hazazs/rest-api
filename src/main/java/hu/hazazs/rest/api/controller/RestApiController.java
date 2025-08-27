@@ -1,7 +1,7 @@
 package hu.hazazs.rest.api.controller;
 
-import hu.hazazs.rest.api.entity.Coffee;
-import hu.hazazs.rest.api.repository.CoffeeRepository;
+import hu.hazazs.rest.api.entity.postgres.Coffee;
+import hu.hazazs.rest.api.repository.postgres.CoffeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

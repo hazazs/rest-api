@@ -1,6 +1,6 @@
-package hu.hazazs.rest.api.repository;
+package hu.hazazs.rest.api.repository.postgres;
 
-import hu.hazazs.rest.api.entity.Coffee;
+import hu.hazazs.rest.api.entity.postgres.Coffee;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

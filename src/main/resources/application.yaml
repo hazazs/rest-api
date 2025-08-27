@@ -9,9 +9,10 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://localhost:7285/postgres
-    username: postgres
-    password: ${POSTGRES_PASSWORD}
+    postgres:
+      url: jdbc:postgresql://localhost:7285/postgres
+      username: postgres
+      password: ${POSTGRES_PASSWORD}
 management:
   endpoints:
     web:

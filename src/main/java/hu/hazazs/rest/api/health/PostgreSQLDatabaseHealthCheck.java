@@ -1,6 +1,6 @@
 package hu.hazazs.rest.api.health;
 
-import hu.hazazs.rest.api.repository.CoffeeRepository;
+import hu.hazazs.rest.api.repository.postgres.CoffeeRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
