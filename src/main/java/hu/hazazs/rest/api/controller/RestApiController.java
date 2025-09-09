@@ -2,6 +2,7 @@ package hu.hazazs.rest.api.controller;
 
 import hu.hazazs.rest.api.entity.postgres.Coffee;
 import hu.hazazs.rest.api.repository.postgres.CoffeeRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class RestApiController {
     }
 
     @PostMapping
-    Coffee postCoffee(@RequestBody Coffee coffee) {
+    Coffee postCoffee(@RequestBody @Valid Coffee coffee) {
         return coffeeRepository.save(coffee);
     }
 
