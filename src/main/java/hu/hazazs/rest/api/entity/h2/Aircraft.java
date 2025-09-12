@@ -2,6 +2,7 @@ package hu.hazazs.rest.api.entity.h2;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,6 +17,7 @@ import java.time.Instant;
 public class Aircraft {
 
     @Id
+    @GeneratedValue
     private Long id;
     private String callsign;
     private String squawk;

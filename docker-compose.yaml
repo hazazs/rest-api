@@ -7,3 +7,13 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "7285:5432"
+  rest-api-rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rest-api-rabbitmq
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    ports:
+      - "5672:5672"    # RabbitMQ broker (AMQP) port
+      - "15672:15672"  # Management UI
