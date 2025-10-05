@@ -71,3 +71,13 @@ run by ```docker-compose``` executed in the root folder (for the password an env
 ```bash
 docker-compose up --build -d rest-api-postgres
 ```
+
+# Setting up the local RabbitMQ broker
+
+Docker is used to provide an out-of-the-box RabbitMQ messaging broker for the application. The container itself can be created
+and run by ```docker-compose``` executed in the root folder (for the password an environment variable needs to be set first with
+the name ```RABBITMQ_DEFAULT_PASS```).
+```bash
+docker-compose up --build -d rest-api-rabbitmq
+```
+Managament UI: ```http://localhost:15672```
