@@ -10,6 +10,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Call sign</th>
                         <th>Squawk</th>
                         <th>AC reg</th>
@@ -27,6 +28,7 @@
                 </thead>
                 <tbody>
                     <tr th:each="aircraft : ${currentPositions}">
+                        <td th:text="${aircraft.id}"></td>
                         <td th:text="${aircraft.callsign}"></td>
                         <td th:text="${aircraft.squawk}"></td>
                         <td th:text="${aircraft.reg}"></td>

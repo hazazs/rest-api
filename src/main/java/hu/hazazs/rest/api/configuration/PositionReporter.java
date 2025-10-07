@@ -5,14 +5,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.function.Supplier;
 
 @Configuration
 public class PositionReporter {
 
     @Bean
-    public Supplier<Aircraft> reportPositions() {
-        return () -> new Aircraft(
+    public Supplier<List<Aircraft>> reportPositions() {
+        return () -> List.of(getAircraft(), getAircraft());
+    }
+
+    private Aircraft getAircraft() {
+        return new Aircraft(
                 null,
                 "SAL001",
                 "sqwk",
