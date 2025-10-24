@@ -81,3 +81,21 @@ the name ```RABBITMQ_DEFAULT_PASS```).
 docker-compose up --build -d rest-api-rabbitmq
 ```
 Managament UI: ```http://localhost:15672```
+
+# Setting up the local MongoDB database
+
+Docker is used to provide an out-of-the-box MongoDB database for the application. The container itself can be created and run by
+```docker-compose``` executed in the root folder (for the password an environment variable needs to be set first with the name
+```MONGODB_ROOT_PASSWORD```).
+```bash
+docker-compose up --build -d rest-api-mongodb
+```
+Mongo Express can be used to visualize the content of the MongoDB database from the browser. The container itself can be created and
+run by ```docker-compose``` executed in the root folder (for the password an environment variable needs to be set first with the
+name ```MONGO_EXPRESS_ADMIN_PASSWORD```).
+```bash
+docker-compose up --build -d rest-api-mongo-express
+```
+Admin UI: ```http://localhost:8081```
+- username: admin
+- password: ${MONGO_EXPRESS_ADMIN_PASSWORD}

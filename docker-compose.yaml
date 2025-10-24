@@ -17,3 +17,24 @@ services:
     ports:
       - "5672:5672"    # RabbitMQ broker (AMQP) port
       - "15672:15672"  # Management UI
+  rest-api-mongodb:
+    image: mongo:7.0
+    container_name: rest-api-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_ROOT_PASSWORD}
+    ports:
+      - "27017:27017"
+  rest-api-mongo-express:
+    image: mongo-express:latest
+    container_name: rest-api-mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_URL: "mongodb://root:${MONGODB_ROOT_PASSWORD}@rest-api-mongodb:27017"
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: ${MONGO_EXPRESS_ADMIN_PASSWORD}
+    depends_on:
+      - rest-api-mongodb
