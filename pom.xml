@@ -156,6 +156,7 @@
 						source: https://openjdk.org/jeps/451
 						-->
 						-javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito-core.version}/mockito-core-${mockito-core.version}.jar
+						--enable-preview
 					</argLine>
 				</configuration>
 			</plugin>
@@ -170,6 +171,7 @@
 				<configuration>
 					<compilerArgs>
 						<arg>-proc:full</arg>
+						<arg>--enable-preview</arg>
 					</compilerArgs>
 				</configuration>
 			</plugin>
