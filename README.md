@@ -32,10 +32,10 @@ public class RestApiApplication {
 package hu.hazazs.rest.api;
 ```
 - **Packaging**: Jar (*this is the default, so there is no explicit attribute in the ```pom.xml```*)
-- **Java**: 17  (*```pom.xml```*)
+- **Java**: 21  (*```pom.xml```*)
 ```xml
 <properties>
-    <java.version>17</java.version>
+    <java.version>21</java.version>
 </properties>
 ```
 
