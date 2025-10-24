@@ -12,12 +12,12 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/coffees")
-public class RestApiController {
+public class CoffeeController {
 
     private final CoffeeRepository coffeeRepository;
 
     @Autowired
-    RestApiController(CoffeeRepository coffeeRepository) {
+    CoffeeController(CoffeeRepository coffeeRepository) {
         this.coffeeRepository = coffeeRepository;
     }
 
