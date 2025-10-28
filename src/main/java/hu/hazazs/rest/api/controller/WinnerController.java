@@ -1,7 +1,7 @@
 package hu.hazazs.rest.api.controller;
 
-import hu.hazazs.rest.api.entity.mongodb.Person;
-import hu.hazazs.rest.api.repository.mongodb.PersonRepository;
+import hu.hazazs.rest.api.entity.mongodb.Winner;
+import hu.hazazs.rest.api.repository.mongodb.WinnerRepository;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,23 +15,23 @@ import java.util.Objects;
 @Controller
 @RequiredArgsConstructor
 @SuppressWarnings("unused")
-public class PersonController {
+public class WinnerController {
 
     @NonNull
-    private final PersonRepository personRepository;
-    private static final String PERSON_API = "http://localhost:3294/random-person";
+    private final WinnerRepository winnerRepository;
+    private static final String RANDOM_PERSON_API = "http://localhost:3294/random-person";
     private static final int ADULT_AGE = 18;
 
     @GetMapping("/random-winner")
-    public String getPeople(Model model) {
-        model.addAttribute("people", Objects.requireNonNull(WebClient.create(PERSON_API)
+    public String getRandomWinner(Model model) {
+        model.addAttribute("random_winner", Objects.requireNonNull(WebClient.create(RANDOM_PERSON_API)
                 .get()
                 .retrieve()
-                .bodyToFlux(Person.class)
-                .flatMap(person -> person.getAge() >= ADULT_AGE ? personRepository.save(person) : Mono.just(person))
+                .bodyToFlux(Winner.class)
+                .flatMap(winner -> winner.getAge() >= ADULT_AGE ? winnerRepository.save(winner) : Mono.just(winner))
                 .collectList()
                 .block()));
-        return "people";
+        return "random-winner";
     }
 
 }

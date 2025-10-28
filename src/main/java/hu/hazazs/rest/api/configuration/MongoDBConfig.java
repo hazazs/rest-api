@@ -20,7 +20,7 @@ public class MongoDBConfig {
 
     @Bean
     public ReactiveMongoTemplate reactiveMongoTemplate(MongoClient client) {
-        return new ReactiveMongoTemplate(client, "person");
+        return new ReactiveMongoTemplate(client, "winner");
     }
 
 }
