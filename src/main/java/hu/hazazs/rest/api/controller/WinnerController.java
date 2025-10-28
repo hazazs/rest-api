@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
-import java.util.Objects;
-
 @Controller
 @RequiredArgsConstructor
 @SuppressWarnings("unused")
@@ -23,15 +21,14 @@ public class WinnerController {
     private static final int ADULT_AGE = 18;
 
     @GetMapping("/random-winner")
-    public String getRandomWinner(Model model) {
-        model.addAttribute("random_winner", Objects.requireNonNull(WebClient.create(RANDOM_PERSON_API)
+    public Mono<String> getRandomWinner(Model model) {
+        return WebClient.create(RANDOM_PERSON_API)
                 .get()
                 .retrieve()
-                .bodyToFlux(Winner.class)
+                .bodyToMono(Winner.class)
                 .flatMap(winner -> winner.getAge() >= ADULT_AGE ? winnerRepository.save(winner) : Mono.just(winner))
-                .collectList()
-                .block()));
-        return "random-winner";
+                .doOnNext(winner -> model.addAttribute("random_winner", winner))
+                .thenReturn("random-winner");
     }
 
 }

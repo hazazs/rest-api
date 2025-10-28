@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Winner report</title>
+        <title>Random winner report</title>
         <meta content="text/html; charset=UTF-8"/>
     </head>
     <body>
-        <div th:if="${!#lists.isEmpty(random_winner)}">
+        <div>
             <h2>Random winner</h2>
             <table>
                 <thead>
@@ -16,10 +16,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="winner : ${random_winner}">
-                        <td th:text="${winner.id}"></td>
-                        <td th:text="${winner.name}"></td>
-                        <td th:text="${winner.age}"></td>
+                    <tr>
+                        <td th:text="${random_winner.id}"></td>
+                        <td th:text="${random_winner.name}"></td>
+                        <td th:text="${random_winner.age}"></td>
                     </tr>
                 </tbody>
             </table>
