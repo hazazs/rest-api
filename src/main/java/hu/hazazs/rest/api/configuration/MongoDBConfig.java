@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
 
 @Configuration
 @EnableReactiveMongoRepositories(basePackages = "hu.hazazs.rest.api.repository.mongodb")
+@SuppressWarnings("unused")
 public class MongoDBConfig {
 
     @Bean

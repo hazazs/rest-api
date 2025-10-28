@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 @Configuration
+@SuppressWarnings("unused")
 public class PositionReporter {
 
     @Bean

@@ -12,6 +12,7 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = ValidCoffee.ValidCoffeeValidator.class)
+@SuppressWarnings("unused")
 public @interface ValidCoffee {
 
     String DEFAULT_ERROR_MESSAGE = "Not a valid Coffee.";

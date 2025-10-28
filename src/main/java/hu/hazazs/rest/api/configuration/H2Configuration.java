@@ -20,6 +20,7 @@ import javax.sql.DataSource;
         entityManagerFactoryRef = "h2EntityManagerFactory",
         transactionManagerRef = "h2TransactionManager"
 )
+@SuppressWarnings("unused")
 public class H2Configuration {
 
     @Bean

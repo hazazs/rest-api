@@ -15,6 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestPropertySource(properties = "droid.id=" + ID)
+@SuppressWarnings("unused")
 class RestApiApplicationTests {
 
 	static final String ID = "R2-D2";

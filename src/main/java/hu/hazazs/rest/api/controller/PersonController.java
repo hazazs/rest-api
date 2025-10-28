@@ -14,6 +14,7 @@ import java.util.Objects;
 
 @Controller
 @RequiredArgsConstructor
+@SuppressWarnings("unused")
 public class PersonController {
 
     @NonNull

@@ -17,6 +17,7 @@ import java.util.function.Consumer;
 @Configuration
 @AllArgsConstructor
 @Slf4j
+@SuppressWarnings("unused")
 public class PositionRetriever {
 
     private final AircraftRepository aircraftRepository;

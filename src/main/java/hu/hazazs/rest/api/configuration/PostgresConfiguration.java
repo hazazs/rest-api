@@ -21,6 +21,7 @@ import javax.sql.DataSource;
         entityManagerFactoryRef = "postgresEntityManagerFactory",
         transactionManagerRef = "postgresTransactionManager"
 )
+@SuppressWarnings("unused")
 public class PostgresConfiguration {
 
     @Bean

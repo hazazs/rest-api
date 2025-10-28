@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/droid")
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
+@SuppressWarnings("unused")
 public class DroidController {
 
     private final Droid droid;

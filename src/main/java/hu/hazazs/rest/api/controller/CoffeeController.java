@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/coffees")
+@SuppressWarnings("unused")
 public class CoffeeController {
 
     private final CoffeeRepository coffeeRepository;
