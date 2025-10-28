@@ -44,9 +44,6 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
-greeting:
-  name: Dakota
-  coffee: ${greeting.name} is drinking Café Cereza
 droid:
   id: BB-8
   description: Small, rolling android. Probably doesn't drink coffee.
