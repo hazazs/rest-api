@@ -5,8 +5,8 @@
         <meta content="text/html; charset=UTF-8"/>
     </head>
     <body>
-        <div th:if="${!#lists.isEmpty(currentPositions)}">
-            <h2>Current aircraft positions</h2>
+        <div th:if="${!#lists.isEmpty(currentPosition)}">
+            <h2>Current aircraft position</h2>
             <table>
                 <thead>
                     <tr>
@@ -27,7 +27,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="aircraft : ${currentPositions}">
+                    <tr th:each="aircraft : ${currentPosition}">
                         <td th:text="${aircraft.id}"></td>
                         <td th:text="${aircraft.callsign}"></td>
                         <td th:text="${aircraft.squawk}"></td>

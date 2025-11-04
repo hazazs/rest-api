@@ -16,9 +16,9 @@ public class PositionController {
     private final AircraftRepository aircraftRepository;
 
     @GetMapping("/aircraft")
-    public String getCurrentAircraftPositions(Model model) {
-        model.addAttribute("currentPositions", aircraftRepository.findAll());
-        return "positions";
+    public String getCurrentAircraftPosition(Model model) {
+        model.addAttribute("currentPosition", aircraftRepository.findAll());
+        return "position";
     }
 
 }

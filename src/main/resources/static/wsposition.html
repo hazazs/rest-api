@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -9,16 +9,8 @@
                 console.log('WebSocket connection is open for business, bienvenidos!');
             };
             socket.onmessage = function (message) {
-                var text = "";
-                var arrAC = message.data.split("Aircraft");
-                var ac = "";
-                for (i = 1; i < arrAC.length; i++) {
-                    text +=
-                        "Aircraft" +
-                         arrAC[i].substring(0, arrAC[i].length - (i == arrAC.length - 1 ? 1 : 2)) +
-                        "\n\n";
-                }
-                document.getElementById("positions").innerText = text;
+                var aircraft = message.data;
+                document.getElementById("position").innerText = aircraft.substring(1, aircraft.length -1);
             };
             socket.onclose = function () {
                 console.log('WebSocket connection closed, hasta la próxima!');
@@ -32,7 +24,7 @@
         </style>
     </head>
     <body>
-        <h1>Current aircraft positions</h1>
-        <div id="positions" class="border-box"></div>
+        <h1>Current aircraft position</h1>
+        <div id="position" class="border-box"></div>
     </body>
 </html>

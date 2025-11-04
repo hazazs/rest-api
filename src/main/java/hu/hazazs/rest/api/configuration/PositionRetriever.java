@@ -11,7 +11,6 @@ import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.function.Consumer;
 
 @Configuration
@@ -24,16 +23,16 @@ public class PositionRetriever {
     private final WebSocketHandler webSocketHandler;
 
     @Bean
-    public Consumer<List<Aircraft>> retrievePositions() {
-        return aircrafts -> {
+    public Consumer<Aircraft> retrievePosition() {
+        return aircraft -> {
             aircraftRepository.deleteAll();
-            aircraftRepository.saveAll(aircrafts);
+            aircraftRepository.save(aircraft);
 
-            sendPositions();
+            sendPosition();
         };
     }
 
-    private void sendPositions() {
+    private void sendPosition() {
         if (aircraftRepository.count() > 0) {
             for (WebSocketSession session : webSocketHandler.getSessionList()) {
                 try {

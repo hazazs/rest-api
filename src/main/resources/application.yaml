@@ -25,17 +25,11 @@ spring:
       enabled: true
       path: /h2
   cloud:
-    function:
-      definition: reportPositions|retrievePositions
     stream:
-      poller:
-        fixed-delay: 10000
       bindings:
-        reportPositions-out-0:
-          destination: aircraftpositions
-        retrievePositions-in-0:
-          destination: aircraftpositions
-          group: aircraftpositions
+        retrievePosition-in-0:
+          destination: aircraftposition
+          group: aircraftposition
 management:
   endpoints:
     web:
